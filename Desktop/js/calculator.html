@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+</head>
+<style>
+    body {
+        background-image: url("https://www.picz.in.th/images/2018/09/04/fRcmfW.jpg");
+    }
+    h1 {
+        font-size: 130px;
+        color: rgb(255, 255, 255);
+        font-family: 'Courier New', Courier, monospace;
+    }
+    #sumButton,
+    #minusButton,
+    #multiplyButton,
+    #divideButton{     
+        width: 40px;
+        height: 40px;
+        font-size: 30px;
+        background-color:yellow;
+    }
+    #clearButton{
+        width: 170px;
+        height: 40px;
+        font-size: 30px;
+        background-color:yellow;
+    }
+    #output {
+        font-size: 70px;
+        color: rgb(255, 255, 255);
+    }
+</style>
+<center>
+        <b><h1 style="background:rgb(23, 115, 168)">Calculator</h1></b>
+        
+        <input type="text" id="firstNumber" style="width: 130px; height: 30px;" placeholder="put firstNumber">
+        <input type="text" id="secondNumber" style="width: 130px; height: 30px;" placeholder="put secondNumber">
+        <br><br>
+        <button id="sumButton" onClick="getSum()">+</button>
+        <button id="minusButton" onClick="getMinus()">-</button>
+        <button id="multiplyButton" onClick="getMultiply()">x</button>
+        <button id="divideButton" onClick="getDivide()">/</button>
+        <br><br>
+        <button id="clearButton" onClick="Clear()">C</button>
+        <br><br>
+        <div id="output" style="background:green;width: 30%; height:100%;"></div>
+                 
+        <script>
+            var firstNumber = document.getElementById("firstNumber");
+            var secondNumber = document.getElementById("secondNumber");
+            var output = document.getElementById("output");
+
+            function getSum() {
+                let sum = parseFloat(firstNumber.value) + parseFloat(secondNumber.value);
+                showResult(sum);
+            }
+            function getMinus() {
+                let sum = parseFloat(firstNumber.value) - parseFloat(secondNumber.value);
+                showResult(sum);
+            }
+            function getMultiply() {
+                let sum = parseFloat(firstNumber.value) * parseFloat(secondNumber.value);
+                showResult(sum);
+            }
+            function getDivide() {
+                let sum = parseFloat(firstNumber.value) / parseFloat(secondNumber.value);
+                showResult(sum);
+            }
+            function Clear() {
+                firstNumber.value = "";
+                secondNumber.value = "";
+            }
+            function showResult(result) {
+                output.innerHTML = "Answer : " + result.toFixed(2);
+            }
+        </script>
+    </body>
+</center>
+
+</html>
